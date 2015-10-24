@@ -122,17 +122,17 @@
     
     <xs:simpleType name="RunParameterNames">
         <xs:restriction base="xs:string">
-            <!-- Description-->
+            <!-- The identification of the analysis. Typically it is ‘sample ID · grain number · spot number on grain’-->
             <xs:enumeration value="title"/>
-            <!-- Description-->
+            <!-- As a historical holdover, it is possible to conduct multiple ‘sets’ of analyses on the same analytical spot. This is rarely done for typical U-Pb work, and this value will be ‘1’ in nearly all instances.-->
             <xs:enumeration value="sets"/>
-            <!-- Description-->
+            <!-- The number of mass species being analysed in this run as described in the run table. It is possible to change the number of mass species during a session, but it is not common practice as it makes the file difficult to process in one go. Therefore this is a useful value to check to make sure that all the ‘runs’ in the file are compatible.-->
             <xs:enumeration value="measurements"/>
-            <!-- Description-->
+            <!-- The number of ‘scans’ is the number of times the mass species run table has been repeated for this analysis. Typically 5 to 7, although can range more widely for non U-Pb or experimental work.-->
             <xs:enumeration value="scans"/>
-            <!-- Description-->
+            <!-- The value set in the control software used to correct counting for dead time in the detector.-->
             <xs:enumeration value="dead_time_ns"/>
-            <!-- Description-->
+            <!-- The zero value of the secondary beam monitor set by blanking the beam and measuring the resulting ‘dark’ current in the secondary beam monitor. Subtracted from all SBM counts.-->
             <xs:enumeration value="sbm_zero_cps"/>           
             <!-- Description-->           
             <xs:enumeration value="autocentering"/>
