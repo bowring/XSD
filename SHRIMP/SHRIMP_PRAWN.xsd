@@ -32,15 +32,15 @@
                 <xs:element name="session_comments" type="xs:string" />
                 <!-- The name or number of the mount being analysed. Recorded as part of the session information in the control software-->
                 <xs:element name="mount" type="xs:string" />
-                <xs:annotation>
-                    <xs:documentation xml:lang="en">
-                        Run parameters
-                    </xs:documentation>
-                </xs:annotation>
                 <!-- An analysis-->
                 <xs:element maxOccurs="unbounded" name="run">
                     <xs:complexType>
                         <xs:sequence>
+                            <xs:annotation>
+                                <xs:documentation xml:lang="en">
+                                    Run parameters - see type RunParameterNames for enumeration.
+                                </xs:documentation>
+                            </xs:annotation>
                             <xs:element maxOccurs="unbounded" name="par">
                                 <xs:complexType>
                                     <xs:attribute name="name" type="RunParameterNames" use="required" />
@@ -53,9 +53,14 @@
                                         <xs:element maxOccurs="unbounded" name="entry">
                                             <xs:complexType>
                                                 <xs:sequence>
+                                                    <xs:annotation>
+                                                        <xs:documentation xml:lang="en">
+                                                            Run Table Entry parameters - see type RunTableEntryParameterNames for enumeration.
+                                                        </xs:documentation>
+                                                    </xs:annotation>
                                                     <xs:element maxOccurs="unbounded" name="par">
                                                         <xs:complexType>
-                                                            <xs:attribute name="name" type="xs:string" use="required" />
+                                                            <xs:attribute name="name" type="RunTableEntryParameterNames" use="required" />
                                                             <xs:attribute name="value" type="xs:string" use="required" />
                                                         </xs:complexType>
                                                     </xs:element>
@@ -117,12 +122,99 @@
     
     <xs:simpleType name="RunParameterNames">
         <xs:restriction base="xs:string">
+            <!-- Description-->
             <xs:enumeration value="title"/>
+            <!-- Description-->
             <xs:enumeration value="sets"/>
+            <!-- Description-->
             <xs:enumeration value="measurements"/>
+            <!-- Description-->
             <xs:enumeration value="scans"/>
+            <!-- Description-->
             <xs:enumeration value="dead_time_ns"/>
-            <xs:enumeration value="sbm_zero_cps"/>
+            <!-- Description-->
+            <xs:enumeration value="sbm_zero_cps"/>           
+            <!-- Description-->           
+            <xs:enumeration value="autocentering"/>
+            <!-- Description-->           
+            <xs:enumeration value="qt1y_mode"/>
+            <!-- Description-->           
+            <xs:enumeration value="deflect_beam_between_peaks"/>
+            <!-- Description-->           
+            <xs:enumeration value="autocenter_method"/>
+            <!-- Description-->           
+            <xs:enumeration value="stage_x"/>
+            <!-- Description-->           
+            <xs:enumeration value="stage_y"/>
+            <!-- Description-->           
+            <xs:enumeration value="stage_z"/>
+            <!-- Description-->           
+            <xs:enumeration value="stage_map_quad_cal"/>
+            <!-- Description-->           
+            <xs:enumeration value="stage_map_cal"/>
+            <!-- Description-->           
+            <xs:enumeration value="detector_gains"/>
+            <!-- Description-->           
+            <xs:enumeration value="detector_zero_cps"/>
+            <!-- Description-->           
+            <xs:enumeration value="eisie_1_cps"/>
+            <!-- Description-->           
+            <xs:enumeration value="eisie_2_cps"/>
+            <!-- Description-->           
+            <xs:enumeration value="eisie_3_cps"/>
+            <!-- Description-->           
+            <xs:enumeration value="eisie_1_date_time"/>
+            <!-- Description-->           
+            <xs:enumeration value="eisie_2_date_time"/>
+            <!-- Description-->           
+            <xs:enumeration value="eisie_3_date_time"/>
+            <!-- Description-->           
+            <xs:enumeration value="primary_names"/>
+            <!-- Description-->           
+            <xs:enumeration value="primary_bits"/>
+            <!-- Description-->           
+            <xs:enumeration value="primary_volts"/>
+            <!-- Description-->           
+            <xs:enumeration value="secondary_names_bits"/>
+            <!-- Description-->           
+            <xs:enumeration value="secondary_bits"/>
+            <!-- Description-->           
+            <xs:enumeration value="secondary_names_volts"/>
+            <!-- Description-->           
+            <xs:enumeration value="secondary_volts"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="RunTableEntryParameterNames">
+        <xs:restriction base="xs:string">
+            <!-- Description-->
+            <xs:enumeration value="label"/>
+            <!-- Description-->
+            <xs:enumeration value="amu"/>
+            <!-- Description-->
+            <xs:enumeration value="trim_amu"/>
+            <!-- Description-->
+            <xs:enumeration value="autocenter_offset_amu"/>
+            <!-- Description-->
+            <xs:enumeration value="count_time_sec"/>
+            <!-- Description-->
+            <xs:enumeration value="delay_sec"/>
+            <!-- Description-->
+            <xs:enumeration value="collector_focus"/>
+            <!-- Description-->
+            <xs:enumeration value="centering_time_sec"/>
+            <!-- Description-->
+            <xs:enumeration value="centering_frequency"/>
+            <!-- Description-->
+            <xs:enumeration value="detector_selection"/>
+            <!-- Description-->
+            <xs:enumeration value="mc_lm_pos"/>
+            <!-- Description-->
+            <xs:enumeration value="mc_hm_pos"/>
+            <!-- Description-->
+            <xs:enumeration value="sc_reference"/>
+            <!-- Description-->
+            <xs:enumeration value="sc_detector"/>
         </xs:restriction>
     </xs:simpleType>
     
