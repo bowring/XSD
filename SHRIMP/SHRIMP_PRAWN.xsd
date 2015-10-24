@@ -164,7 +164,9 @@
                       Does not directly factor into calculations, but may be important for interpretation and 
                       quality control.-->           
             <xs:enumeration value="stage_x"/>
-            <!-- Description-->           
+            <!-- The location of the analytical spot in the y-axis. (On SHRIMP the y-axis is the ‘east-west’ direction).
+                      Does not directly factor into calculations, but may be important for interpretation and 
+                      quality control.-->           
             <xs:enumeration value="stage_y"/>
             <!-- Description-->           
             <xs:enumeration value="stage_z"/>
@@ -196,11 +198,16 @@
             <xs:enumeration value="primary_volts"/>
             <!-- Description-->           
             <xs:enumeration value="secondary_names_bits"/>
-            <!-- Description-->           
+            <!-- The digital bit settings matching the lens and steering components listed above. Does not directly 
+                      factor into calculations, but may be important for interpretation and quality control.-->           
             <xs:enumeration value="secondary_bits"/>
-            <!-- Description-->           
+            <!-- Names of Secondary beam components (lens and steering). Note that not all secondary beam components 
+                      have equivalent voltage readings. Does not directly factor into calculations, but may be 
+                      important for interpretation and quality control.-->           
             <xs:enumeration value="secondary_names_volts"/>
-            <!-- Description-->           
+            <!-- The equivalent voltage settings matching the lens and steering components listed above.
+                      Does not directly factor into calculations, but may be important for interpretation and 
+                      quality control.-->           
             <xs:enumeration value="secondary_volts"/>
         </xs:restriction>
     </xs:simpleType>
