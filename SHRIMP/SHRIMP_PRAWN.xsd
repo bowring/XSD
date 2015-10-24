@@ -144,15 +144,25 @@
             <!-- The zero value of the secondary beam monitor set by blanking the beam and measuring the resulting
                       ‘dark’ current in the secondary beam monitor. Subtracted from all SBM counts.-->
             <xs:enumeration value="sbm_zero_cps"/>           
-            <!-- Description-->           
+            <!-- Whether autocentering was on during analysis. Does not directly factor into calculations, 
+                      but may be important for interpretation and quality control.-->           
             <xs:enumeration value="autocentering"/>
-            <!-- Description-->           
+            <!-- How the QTY1 lens setting (the first secondary beam tuning) was set in the control software. 
+                      This setting can compensate for irregularities on the mount surface or drift of the sample stage 
+                      location motors over a long automated session. Does not directly factor into calculations, 
+                      but may be important for interpretation and quality control.-->           
             <xs:enumeration value="qt1y_mode"/>
-            <!-- Description-->           
+            <!-- Whether the beam was deflected between mass species (usually to protect the detector from large amplitudes).
+                      Unusual to use in typical U-Pb work. Does not directly factor into calculations, 
+                      but may be important for interpretation and quality control.-->           
             <xs:enumeration value="deflect_beam_between_peaks"/>
-            <!-- Description-->           
+            <!-- The method used to autocentre the mass species. Does not directly factor into calculations, 
+                      but may be important for interpretation and quality control.-->           
             <xs:enumeration value="autocenter_method"/>
-            <!-- Description-->           
+            <!-- The location of the analytical spot in the x-axis. (On SHRIMP the x-axis is along the line of the secondary
+                      beam, i.e. the distance of the sample surface from the extraction plate, or, broadly, the ‘focus’). 
+                      Does not directly factor into calculations, but may be important for interpretation and 
+                      quality control.-->           
             <xs:enumeration value="stage_x"/>
             <!-- Description-->           
             <xs:enumeration value="stage_y"/>
