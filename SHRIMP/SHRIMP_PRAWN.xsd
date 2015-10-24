@@ -5,20 +5,45 @@
            elementFormDefault="qualified" 
            targetNamespace="https://raw.githubusercontent.com"
            xmlns="https://raw.githubusercontent.com">
+    <xs:annotation>
+        <xs:documentation xml:lang="en">
+            This schema defines the contents of a SHRIMP PRAWN data file.
+
+            Created: 24.October.2015
+            Revised: 
+            
+        </xs:documentation>
+    </xs:annotation>    
     <xs:element name="prawn_file">
         <xs:complexType>
             <xs:sequence>
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        Session parameters
+                    </xs:documentation>
+                </xs:annotation>    
+                <!-- Control software version-->
                 <xs:element name="software_version" type="xs:string" />
+                <!-- A ‘run’ is an analysis of a sample. This value indicates the number of analyses contained in the file. Useful for checking.-->                
                 <xs:element name="runs" type="xs:unsignedByte" />
+                <!-- The control software provides space to include comments in the data file. Rarely used as comments are usually recorded elsewhere.-->
                 <xs:element name="session_quality" type="xs:string" />
+                <!-- The control software provides space to include comments in the data file. Rarely used as comments are usually recorded elsewhere-->
                 <xs:element name="session_comments" type="xs:string" />
+                <!-- The name or number of the mount being analysed. Recorded as part of the session information in the control software-->
                 <xs:element name="mount" type="xs:string" />
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        Run parameters
+                    </xs:documentation>
+                </xs:annotation>
+                <!-- An analysis-->
                 <xs:element maxOccurs="unbounded" name="run">
                     <xs:complexType>
                         <xs:sequence>
                             <xs:element maxOccurs="unbounded" name="par">
                                 <xs:complexType>
-                                    <xs:attribute name="name" type="xs:string" use="required" />
+                                    <xs:attribute name="name" type="RunParameterNames" use="required" />
                                     <xs:attribute name="value" type="xs:string" use="required" />
                                 </xs:complexType>
                             </xs:element>
@@ -89,4 +114,16 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+    
+    <xs:simpleType name="RunParameterNames">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="title"/>
+            <xs:enumeration value="sets"/>
+            <xs:enumeration value="measurements"/>
+            <xs:enumeration value="scans"/>
+            <xs:enumeration value="dead_time_ns"/>
+            <xs:enumeration value="sbm_zero_cps"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
 </xs:schema>
