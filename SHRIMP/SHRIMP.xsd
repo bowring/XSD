@@ -1,5 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://shrimp.anu.edu.au" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<?xml version="1.0" encoding="Windows-1252"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+           attributeFormDefault="unqualified" 
+           elementFormDefault="qualified" 
+           targetNamespace="https://github.com"
+           xmlns="https://github.com">
     <xs:element name="prawn_file">
         <xs:complexType>
             <xs:sequence>
