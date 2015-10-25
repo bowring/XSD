@@ -214,21 +214,25 @@
     
     <xs:simpleType name="RunTableEntryParameterNames">
         <xs:restriction base="xs:string">
-            <!-- Description-->
+            <!-- Mass species used as reference peak for 204Pb measurement and for calculating composition-->
             <xs:enumeration value="label"/>
-            <!-- Description-->
+            <!-- Atomic mass unit setting of the mass species. Not used directly in calculations, but may be useful 
+                      for quality control to check offsets.-->
             <xs:enumeration value="amu"/>
             <!-- Description-->
             <xs:enumeration value="trim_amu"/>
             <!-- Description-->
             <xs:enumeration value="autocenter_offset_amu"/>
-            <!-- Description-->
+            <!-- The amount of time in seconds that the collector measures the imcoming secondary beam at this mass species. 
+                      Used to calculate counting rate for mass species.-->
             <xs:enumeration value="count_time_sec"/>
-            <!-- Description-->
+            <!-- Time that data acquistion is delayed when magnet is set for this mass species to allow for settling. 
+                      Not used in calculations, but may be useful for quality control.-->
             <xs:enumeration value="delay_sec"/>
-            <!-- Description-->
+            <!-- The position of the collector. Not used in calculations, but may be useful for quality control.-->
             <xs:enumeration value="collector_focus"/>
-            <!-- Description-->
+            <!-- Amount of time taken to auto-centre mass species. Zero indicates that no autocentring was done at this 
+                      mass species. Not used in calculations, but may be usefulf ro quality control.-->
             <xs:enumeration value="centering_time_sec"/>
             <!-- Description-->
             <xs:enumeration value="centering_frequency"/>
@@ -238,9 +242,11 @@
             <xs:enumeration value="mc_lm_pos"/>
             <!-- Description-->
             <xs:enumeration value="mc_hm_pos"/>
-            <!-- Description-->
+            <!-- The purpose for measuring the mass species - to be ratioed against the reference, as a reference, 
+                      or as a background to be subtracted from all mass species measurements-->
             <xs:enumeration value="sc_reference"/>
-            <!-- Description-->
+            <!-- The type of detector used to make the measurement of the mass species. 
+                      Can be counter (multiplier) or cup (Faraday).-->
             <xs:enumeration value="sc_detector"/>
         </xs:restriction>
     </xs:simpleType>
