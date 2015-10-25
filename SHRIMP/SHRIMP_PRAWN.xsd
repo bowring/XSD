@@ -25,16 +25,16 @@
                 <!-- Control software version-->
                 <xs:element name="software_version" type="xs:string" />
                 <!-- A ‘run’ is an analysis of a sample. This value indicates the number of analyses contained in the file. 
-                      Useful for checking.-->                
+                Useful for checking.-->                
                 <xs:element name="runs" type="xs:unsignedByte" />
                 <!-- The control software provides space to include comments in the data file. Rarely used as comments are 
-                      usually recorded elsewhere.-->
+                usually recorded elsewhere.-->
                 <xs:element name="session_quality" type="xs:string" />
                 <!-- The control software provides space to include comments in the data file. Rarely used as comments are 
-                      usually recorded elsewhere-->
+                usually recorded elsewhere-->
                 <xs:element name="session_comments" type="xs:string" />
                 <!-- The name or number of the mount being analysed. Recorded as part of the session information in the 
-                      control software-->
+                control software-->
                 <xs:element name="mount" type="xs:string" />
                 <!-- An analysis-->
                 <xs:element maxOccurs="unbounded" name="run">
@@ -80,9 +80,14 @@
                             <xs:element name="set">
                                 <xs:complexType>
                                     <xs:sequence>
+                                        <xs:annotation>
+                                            <xs:documentation xml:lang="en">
+                                                Set parameters - see type SetParameterNames for enumeration.
+                                            </xs:documentation>
+                                        </xs:annotation>
                                         <xs:element maxOccurs="unbounded" name="par">
                                             <xs:complexType>
-                                                <xs:attribute name="name" type="xs:string" use="required" />
+                                                <xs:attribute name="name" type="SetParameterNames" use="required" />
                                                 <xs:attribute name="value" type="xs:string" use="required" />
                                             </xs:complexType>
                                         </xs:element>
@@ -129,44 +134,44 @@
             <!-- The identification of the analysis. Typically it is ‘sample ID · grain number · spot number on grain’-->
             <xs:enumeration value="title"/>
             <!-- As a historical holdover, it is possible to conduct multiple ‘sets’ of analyses on the same analytical spot. 
-                      This is rarely done for typical U-Pb work, and this value will be ‘1’ in nearly all instances.-->
+            This is rarely done for typical U-Pb work, and this value will be ‘1’ in nearly all instances.-->
             <xs:enumeration value="sets"/>
             <!-- The number of mass species being analysed in this run as described in the run table. 
-                      It is possible to change the number of mass species during a session, but it is not common practice 
-                      as it makes the file difficult to process in one go. Therefore this is a useful value to check to 
-                      make sure that all the ‘runs’ in the file are compatible.-->
+            It is possible to change the number of mass species during a session, but it is not common practice 
+            as it makes the file difficult to process in one go. Therefore this is a useful value to check to 
+            make sure that all the ‘runs’ in the file are compatible.-->
             <xs:enumeration value="measurements"/>
             <!-- The number of ‘scans’ is the number of times the mass species run table has been repeated for this analysis.
-                      Typically 5 to 7, although can range more widely for non U-Pb or experimental work.-->
+            Typically 5 to 7, although can range more widely for non U-Pb or experimental work.-->
             <xs:enumeration value="scans"/>
             <!-- The value set in the control software used to correct counting for dead time in the detector.-->
             <xs:enumeration value="dead_time_ns"/>
             <!-- The zero value of the secondary beam monitor set by blanking the beam and measuring the resulting
-                      ‘dark’ current in the secondary beam monitor. Subtracted from all SBM counts.-->
+            ‘dark’ current in the secondary beam monitor. Subtracted from all SBM counts.-->
             <xs:enumeration value="sbm_zero_cps"/>           
             <!-- Whether autocentering was on during analysis. Does not directly factor into calculations, 
-                      but may be important for interpretation and quality control.-->           
+            but may be important for interpretation and quality control.-->           
             <xs:enumeration value="autocentering"/>
             <!-- How the QTY1 lens setting (the first secondary beam tuning) was set in the control software. 
-                      This setting can compensate for irregularities on the mount surface or drift of the sample stage 
-                      location motors over a long automated session. Does not directly factor into calculations, 
-                      but may be important for interpretation and quality control.-->           
+            This setting can compensate for irregularities on the mount surface or drift of the sample stage 
+            location motors over a long automated session. Does not directly factor into calculations, 
+            but may be important for interpretation and quality control.-->           
             <xs:enumeration value="qt1y_mode"/>
             <!-- Whether the beam was deflected between mass species (usually to protect the detector from large amplitudes).
-                      Unusual to use in typical U-Pb work. Does not directly factor into calculations, 
-                      but may be important for interpretation and quality control.-->           
+            Unusual to use in typical U-Pb work. Does not directly factor into calculations, 
+            but may be important for interpretation and quality control.-->           
             <xs:enumeration value="deflect_beam_between_peaks"/>
             <!-- The method used to autocentre the mass species. Does not directly factor into calculations, 
-                      but may be important for interpretation and quality control.-->           
+            but may be important for interpretation and quality control.-->           
             <xs:enumeration value="autocenter_method"/>
             <!-- The location of the analytical spot in the x-axis. (On SHRIMP the x-axis is along the line of the secondary
-                      beam, i.e. the distance of the sample surface from the extraction plate, or, broadly, the ‘focus’). 
-                      Does not directly factor into calculations, but may be important for interpretation and 
-                      quality control.-->           
+            beam, i.e. the distance of the sample surface from the extraction plate, or, broadly, the ‘focus’). 
+            Does not directly factor into calculations, but may be important for interpretation and 
+            quality control.-->           
             <xs:enumeration value="stage_x"/>
             <!-- The location of the analytical spot in the y-axis. (On SHRIMP the y-axis is the ‘east-west’ direction).
-                      Does not directly factor into calculations, but may be important for interpretation and 
-                      quality control.-->           
+            Does not directly factor into calculations, but may be important for interpretation and 
+            quality control.-->           
             <xs:enumeration value="stage_y"/>
             <!-- Description-->           
             <xs:enumeration value="stage_z"/>
@@ -199,15 +204,15 @@
             <!-- Description-->           
             <xs:enumeration value="secondary_names_bits"/>
             <!-- The digital bit settings matching the lens and steering components listed above. Does not directly 
-                      factor into calculations, but may be important for interpretation and quality control.-->           
+            factor into calculations, but may be important for interpretation and quality control.-->           
             <xs:enumeration value="secondary_bits"/>
             <!-- Names of Secondary beam components (lens and steering). Note that not all secondary beam components 
-                      have equivalent voltage readings. Does not directly factor into calculations, but may be 
-                      important for interpretation and quality control.-->           
+            have equivalent voltage readings. Does not directly factor into calculations, but may be 
+            important for interpretation and quality control.-->           
             <xs:enumeration value="secondary_names_volts"/>
             <!-- The equivalent voltage settings matching the lens and steering components listed above.
-                      Does not directly factor into calculations, but may be important for interpretation and 
-                      quality control.-->           
+            Does not directly factor into calculations, but may be important for interpretation and 
+            quality control.-->           
             <xs:enumeration value="secondary_volts"/>
         </xs:restriction>
     </xs:simpleType>
@@ -217,22 +222,22 @@
             <!-- Mass species used as reference peak for 204Pb measurement and for calculating composition-->
             <xs:enumeration value="label"/>
             <!-- Atomic mass unit setting of the mass species. Not used directly in calculations, but may be useful 
-                      for quality control to check offsets.-->
+            for quality control to check offsets.-->
             <xs:enumeration value="amu"/>
             <!-- Description-->
             <xs:enumeration value="trim_amu"/>
             <!-- Description-->
             <xs:enumeration value="autocenter_offset_amu"/>
             <!-- The amount of time in seconds that the collector measures the imcoming secondary beam at this mass species. 
-                      Used to calculate counting rate for mass species.-->
+            Used to calculate counting rate for mass species.-->
             <xs:enumeration value="count_time_sec"/>
             <!-- Time that data acquistion is delayed when magnet is set for this mass species to allow for settling. 
-                      Not used in calculations, but may be useful for quality control.-->
+            Not used in calculations, but may be useful for quality control.-->
             <xs:enumeration value="delay_sec"/>
             <!-- The position of the collector. Not used in calculations, but may be useful for quality control.-->
             <xs:enumeration value="collector_focus"/>
             <!-- Amount of time taken to auto-centre mass species. Zero indicates that no autocentring was done at this 
-                      mass species. Not used in calculations, but may be usefulf ro quality control.-->
+            mass species. Not used in calculations, but may be usefulf ro quality control.-->
             <xs:enumeration value="centering_time_sec"/>
             <!-- Description-->
             <xs:enumeration value="centering_frequency"/>
@@ -243,12 +248,38 @@
             <!-- Description-->
             <xs:enumeration value="mc_hm_pos"/>
             <!-- The purpose for measuring the mass species - to be ratioed against the reference, as a reference, 
-                      or as a background to be subtracted from all mass species measurements-->
+            or as a background to be subtracted from all mass species measurements-->
             <xs:enumeration value="sc_reference"/>
             <!-- The type of detector used to make the measurement of the mass species. 
-                      Can be counter (multiplier) or cup (Faraday).-->
+            Can be counter (multiplier) or cup (Faraday).-->
             <xs:enumeration value="sc_detector"/>
         </xs:restriction>
     </xs:simpleType>
     
+    <xs:simpleType name="SetParameterNames">
+        <xs:restriction base="xs:string">
+            <!-- Description-->
+            <xs:enumeration value="date"/>
+            <!-- Description-->
+            <xs:enumeration value="time"/>
+            <!-- Description-->
+            <xs:enumeration value="qt1y"/>
+            <!-- Description-->
+            <xs:enumeration value="qt1y_volts"/>
+            <!-- Description-->
+            <xs:enumeration value="qt1z"/>
+            <!-- Description-->
+            <xs:enumeration value="egy"/>
+            <!-- Description-->
+            <xs:enumeration value="egz"/>
+            <!-- Description-->
+            <xs:enumeration value="prealphay"/>
+            <!-- Description-->
+            <xs:enumeration value="pbm"/>
+            <!-- Description-->
+            <xs:enumeration value="eisie_cps"/>
+            <!-- Description-->
+            <xs:enumeration value="eisie_date_time"/>
+        </xs:restriction>
+    </xs:simpleType>
 </xs:schema>
