@@ -53,10 +53,10 @@
                             </xs:element>
                             <xs:element name="run_table">
                                 <xs:complexType>
-                                    <xs:attribute name="entries" type="xs:unsignedByte" use="required" />
-                                    <xs:attribute name="parameters" type="xs:unsignedByte" use="required" />
-                                    <xs:attribute name="sample_name" type="xs:string" use="required" />
                                     <xs:sequence>
+                                        <xs:attribute name="entries" type="xs:unsignedByte" use="required" />
+                                        <xs:attribute name="parameters" type="xs:unsignedByte" use="required" />
+                                        <xs:attribute name="sample_name" type="xs:string" use="required" />
                                         <xs:element maxOccurs="unbounded" name="entry">
                                             <xs:complexType>
                                                 <xs:sequence>
@@ -93,8 +93,8 @@
                                         </xs:element>
                                         <xs:element maxOccurs="unbounded" name="scan">
                                             <xs:complexType>
-                                                <xs:attribute name="number" type="xs:unsignedByte" use="required" />
                                                 <xs:sequence>
+                                                    <xs:attribute name="number" type="xs:unsignedByte" use="required" />
                                                     <xs:element maxOccurs="unbounded" name="measurement">
                                                         <xs:complexType>
                                                             <xs:sequence>
