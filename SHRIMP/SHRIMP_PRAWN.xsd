@@ -207,6 +207,8 @@
             <!-- Description-->           
             <xs:enumeration value="primary_volts"/>
             <!-- Description-->           
+            <xs:enumeration value="secondary_names"/>
+            <!-- Description-->           
             <xs:enumeration value="secondary_names_bits"/>
             <!-- The digital bit settings matching the lens and steering components listed above. Does not directly 
             factor into calculations, but may be important for interpretation and quality control.-->           
