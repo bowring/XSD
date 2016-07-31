@@ -130,6 +130,9 @@
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
+                <!-- A post run-->
+                <xs:element maxOccurs="unbounded" name="poxi">
+                </xs:element>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
