@@ -285,7 +285,9 @@
             <xs:enumeration value="eisie_cps"/>
             <!-- Description-->
             <xs:enumeration value="eisie_date_time"/>
-        </xs:restriction>
+             <!-- Description-->
+            <xs:enumeration value="lab_temperature_degc"/>
+       </xs:restriction>
     </xs:simpleType>
     
     <xs:simpleType name="MeasurementParameterNames">
