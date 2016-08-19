@@ -35,7 +35,7 @@
                 <xs:element name="session_comments" type="xs:string" />
                 <!-- The name or number of the mount being analysed. Recorded as part of the session information in the 
                 control software-->
-                <xs:element name="mount" type="xs:string" />
+                <xs:element minOccurs="0" name="mount" type="xs:string" />
                 <!-- An analysis-->
                 <xs:element maxOccurs="unbounded" name="run">
                     <xs:complexType>
