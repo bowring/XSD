@@ -26,7 +26,7 @@
                 <xs:element name="software_version" type="xs:string" />
                 <!-- A ‘run’ is an analysis of a sample. This value indicates the number of analyses contained in the file. 
                 Useful for checking.-->                
-                <xs:element name="runs" type="xs:unsignedByte" />
+                <xs:element name="runs" type="xs:short" />
                 <!-- The control software provides space to include comments in the data file. Rarely used as comments are 
                 usually recorded elsewhere.-->
                 <xs:element name="session_quality" type="xs:string" />
