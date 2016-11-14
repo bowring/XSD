@@ -317,7 +317,15 @@
             <!-- Description-->
             <xs:enumeration value="egy"/>
             <!-- Description-->
-            <xs:enumeration value="egz"/>
+            <xs:enumeration value="egz"/>                   
+            <!-- Description-->
+            <xs:enumeration value="egkY"/>
+            <!-- Description-->
+            <xs:enumeration value="egkZ"/>
+            <!-- Description-->
+            <xs:enumeration value="egcY"/>
+            <!-- Description-->
+            <xs:enumeration value="egcZ"/>                                    
             <!-- Description-->
             <xs:enumeration value="prealphay"/>
             <!-- Description-->
