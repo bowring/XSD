@@ -36,6 +36,8 @@
                 <!-- The name or number of the mount being analysed. Recorded as part of the session information in the 
                 control software-->
                 <xs:element minOccurs="0" name="mount" type="xs:string" />
+                <!-- From SHRIMP SW v3.51 SHR 2-->
+                <xs:element minOccurs="0" name="login_comment" type="xs:string" />
                 <!-- An analysis-->
                 <xs:element maxOccurs="unbounded" name="run">
                     <xs:complexType>
@@ -191,6 +193,23 @@
             <xs:enumeration value="detector_gains"/>
             <!-- Description-->           
             <xs:enumeration value="detector_zero_cps"/>
+                   
+                   <!-- Description-->           
+            <xs:enumeration value="EISIE_measured"/>
+                   <!-- Description-->           
+            <xs:enumeration value="EISIE_sets"/>
+                   <!-- Description-->           
+            <xs:enumeration value="detector1_zero_sub_cps"/>
+                   <!-- Description-->           
+            <xs:enumeration value="detector2_zero_sub_cps"/>
+                   <!-- Description-->           
+            <xs:enumeration value="detector3_zero_sub_cps"/>
+                   <!-- Description-->           
+            <xs:enumeration value="detector4_zero_sub_cps"/>
+                   <!-- Description-->           
+            <xs:enumeration value="detector5_zero_sub_cps"/>
+                   
+                   
             <!-- Description-->           
             <xs:enumeration value="eisie_1_cps"/>
             <!-- Description-->           
