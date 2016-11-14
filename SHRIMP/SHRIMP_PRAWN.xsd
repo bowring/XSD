@@ -37,20 +37,17 @@
                 control software-->
                 <xs:element minOccurs="0" name="mount" type="xs:string" />
                 <!-- From SHRIMP SW v3.51 SHR 2-->
-                <xs:element minOccurs="0" name="login_comment" type="xs:string" />
-                       
-                       <!-- From SHRIMP SW v3.51 SHR 2-->
+                <xs:element minOccurs="0" name="login_comment" type="xs:string" />                       
+                <!-- From SHRIMP SW v3.51 SHR 2-->
                 <xs:element minOccurs="0" name="stdZrU" type="xs:string" />
-                       <!-- From SHRIMP SW v3.51 SHR 2-->
+                <!-- From SHRIMP SW v3.51 SHR 2-->
                 <xs:element minOccurs="0" name="stdUOU" type="xs:string" />
-                       <!-- From SHRIMP SW v3.51 SHR 2-->
+                <!-- From SHRIMP SW v3.51 SHR 2-->
                 <xs:element minOccurs="0" name="stdPbU" type="xs:string" />
-                       <!-- From SHRIMP SW v3.51 SHR 2-->
+                <!-- From SHRIMP SW v3.51 SHR 2-->
                 <xs:element minOccurs="0" name="stdAge" type="xs:string" />
-                       <!-- From SHRIMP SW v3.51 SHR 2-->
-                <xs:element minOccurs="0" name="stdConcU" type="xs:string" />
-                       
-                       
+                <!-- From SHRIMP SW v3.51 SHR 2-->
+                <xs:element minOccurs="0" name="stdConcU" type="xs:string" />                                              
                 <!-- An analysis-->
                 <xs:element maxOccurs="unbounded" name="run">
                     <xs:complexType>
